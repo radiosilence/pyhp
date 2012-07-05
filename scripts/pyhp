@@ -3,27 +3,41 @@
 whether they are up or not.
 
 Usage:
-    pyhp <url> [-H] [--interval=<seconds>]
+    pyhp <url> [-Ht] [--interval=<seconds>]
     pyhp -h | --help
 
 Options:
     -h --help                Show this screen.
     -H --headers             Show the headers returned by each request.
     -i --interval=<seconds>  Time between requests, in seconds. [default: 1]
+    -t --terse               Terse output, consisting only of . and X
 """
 
 import signal
 import sys
+from sys import stdout
 from docopt import docopt
 
-from pyhp import pyhp
+from pyhp import pyhp, VERSION
+
+STATS = {
+    'requests': 0,
+    'success': 0,
+    'error': 0,
+}
 
 def signal_handler(signal, frame):
+    stdout.write('\ncompleted {} requests, {} successful, {} errors\n'.format(
+        STATS['requests'],
+        STATS['success'],
+        STATS['error']
+    ))
     sys.exit(0)
 
 
 if __name__ == '__main__':
-    args = docopt(__doc__, version='pyhp 0.1')
+    args = docopt(__doc__, version='pyhp {}'.format(
+        VERSION))
     signal.signal(signal.SIGINT, signal_handler)
 
     try:
@@ -31,9 +45,17 @@ if __name__ == '__main__':
     except ValueError:
         interval = 1
 
-    for line in pyhp(args['<url>'], interval=interval,
-        show_headers=args['--headers']):
-        print line
-        sys.stdout.flush()
-
+    terse = args['--terse']
+    for line, returncode in pyhp(args['<url>'], interval=interval,
+        show_headers=args['--headers'], terse=terse):
+        stdout.write(line)
+        if not terse:
+            stdout.write('\n')
+        stdout.flush()
+        if returncode:
+            STATS['requests'] += 1
+            if returncode == 'success':
+                STATS['success'] += 1
+            if returncode == 'error':
+                STATS['error'] += 1
     signal.pause()
