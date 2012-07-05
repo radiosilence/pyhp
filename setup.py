@@ -11,7 +11,7 @@ setup(
     url='https://github.com/radiosilence/httping',
     author='James Cleveland',
     author_email='jamescleveland@gmail.com',
-    packages=find_packages(),
+    py_modules=['httping'],
     scripts=['scripts/httping'],
     include_package_data=True,
     license="LICENSE.txt",

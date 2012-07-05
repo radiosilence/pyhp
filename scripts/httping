@@ -29,7 +29,7 @@ if __name__ == '__main__':
     except ValueError:
         interval = 1
     signal.signal(signal.SIGINT, signal_handler)
-    ping(args['<url>'], interval=interval,
+    httping(args['<url>'], interval=interval,
          show_headers=args['--headers'])
 
     signal.pause()
