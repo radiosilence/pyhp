@@ -52,7 +52,9 @@ if __name__ == '__main__':
         if not terse:
             stdout.write('\n')
         stdout.flush()
-        if returncode:
+        if returncode == 'exit':
+            sys.exit(1)
+        elif returncode:
             STATS['requests'] += 1
             if returncode == 'success':
                 STATS['success'] += 1

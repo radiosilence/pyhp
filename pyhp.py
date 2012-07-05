@@ -56,6 +56,9 @@ def pyhp(url, interval=None, show_headers=False, terse=False):
             request = requests.get(url)
         except requests.exceptions.ConnectionError as e:
             request = DummyRequest(url, 'FAIL', 'Connection failed')
+        except requests.exceptions.MissingSchema:
+            yield "Invalid URL", 'exit'
+
         if terse:
             yield terse_output(request)
         else:
