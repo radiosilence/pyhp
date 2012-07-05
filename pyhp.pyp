@@ -2,7 +2,7 @@ import requests
 from datetime import datetime
 from time import sleep
 
-def phyp(url, interval=None, show_headers=False):
+def pyhp(url, interval=None, show_headers=False):
     if not interval:
         interval = 1
 

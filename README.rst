@@ -1,4 +1,4 @@
-    phyp
+    pyhp
     =====
 
     a simple tool to hit websites at a given interval and display
@@ -6,8 +6,8 @@
 
 
     Usage:
-        phyp <url> [-H] [--interval=<seconds>]
-        phyp -h | --help
+        pyhp <url> [-H] [--interval=<seconds>]
+        pyhp -h | --help
 
     Options:
         -h --help                Show this screen.
