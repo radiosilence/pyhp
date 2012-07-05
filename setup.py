@@ -8,7 +8,7 @@ setup(
     description='a simple tool to hit websites at a given interval and'
         +' display whether they are up or not',
     long_description=open('README.rst').read(),
-    url='https://github.com/radiosilence/httping',
+    url='https://github.com/radiosilence/hping',
     author='James Cleveland',
     author_email='jamescleveland@gmail.com',
     py_modules=['hping'],
