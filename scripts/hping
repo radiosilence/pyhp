@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""httping - a simple tool to hit websites at a given interval and display
+"""hping - a simple tool to hit websites at a given interval and display
 whether they are up or not.
 
 Usage:
@@ -16,7 +16,7 @@ import signal
 import sys
 from docopt import docopt
 
-from httping import httping
+from hping import hping
 
 def signal_handler(signal, frame):
     sys.exit(0)
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     except ValueError:
         interval = 1
     signal.signal(signal.SIGINT, signal_handler)
-    httping(args['<url>'], interval=interval,
+    hping(args['<url>'], interval=interval,
          show_headers=args['--headers'])
 
     signal.pause()

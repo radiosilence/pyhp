@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-NAME = 'httping'
+NAME = 'hping'
 
 setup(
     name=NAME,
@@ -11,8 +11,8 @@ setup(
     url='https://github.com/radiosilence/httping',
     author='James Cleveland',
     author_email='jamescleveland@gmail.com',
-    py_modules=['httping'],
-    scripts=['scripts/httping'],
+    py_modules=['hping'],
+    scripts=['scripts/hping'],
     include_package_data=True,
     license="LICENSE.txt",
     install_requires=open('requirements.txt').read().split("\n")

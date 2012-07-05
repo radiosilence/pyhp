@@ -1,13 +1,13 @@
-    httping
-    =======
+    hping
+    =====
 
     a simple tool to hit websites at a given interval and display
     whether they are up or not.
 
 
     Usage:
-        httping <url> [-H] [--interval=<seconds>]
-        httping -h | --help
+        hping <url> [-H] [--interval=<seconds>]
+        hping -h | --help
 
     Options:
         -h --help                Show this screen.
