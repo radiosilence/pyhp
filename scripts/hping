@@ -3,8 +3,8 @@
 whether they are up or not.
 
 Usage:
-    httping <url> [-H] [--interval=<seconds>]
-    httping -h | --help
+    hping <url> [-H] [--interval=<seconds>]
+    hping -h | --help
 
 Options:
     -h --help                Show this screen.
@@ -23,7 +23,7 @@ def signal_handler(signal, frame):
 
 
 if __name__ == '__main__':
-    args = docopt(__doc__, version='HTTPing 0.1')
+    args = docopt(__doc__, version='hping 0.1')
     try:
         interval = float(args['--interval'])
     except ValueError:
