@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-NAME = 'hping'
+NAME = 'phyp'
 
 setup(
     name=NAME,
@@ -8,11 +8,11 @@ setup(
     description='a simple tool to hit websites at a given interval and'
         +' display whether they are up or not',
     long_description=open('README.rst').read(),
-    url='https://github.com/radiosilence/hping',
+    url='https://github.com/radiosilence/phyp',
     author='James Cleveland',
     author_email='jamescleveland@gmail.com',
-    py_modules=['hping'],
-    scripts=['scripts/hping'],
+    py_modules=['phyp'],
+    scripts=['scripts/phyp'],
     include_package_data=True,
     license="LICENSE.txt",
     install_requires=open('requirements.txt').read().split("\n")

@@ -1,4 +1,4 @@
-    hping
+    phyp
     =====
 
     a simple tool to hit websites at a given interval and display
@@ -6,8 +6,8 @@
 
 
     Usage:
-        hping <url> [-H] [--interval=<seconds>]
-        hping -h | --help
+        phyp <url> [-H] [--interval=<seconds>]
+        phyp -h | --help
 
     Options:
         -h --help                Show this screen.

@@ -2,7 +2,7 @@ import requests
 from datetime import datetime
 from time import sleep
 
-def hping(url, interval=None, show_headers=False):
+def phyp(url, interval=None, show_headers=False):
     if not interval:
         interval = 1
 
