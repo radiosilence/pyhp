@@ -1,8 +1,7 @@
-    pyhp
-    =====
+pyhp
+=====
 
-    a simple tool to hit websites at a given interval and display
-    whether they are up or not.
+a simple tool to hit websites at a given interval and display whether they are up or not.
 
 
     Usage:
