@@ -4,7 +4,7 @@ NAME = 'pyhp'
 
 setup(
     name=NAME,
-    version="0.1",
+    version="0.2",
     description='a simple tool to hit websites at a given interval and'
         +' display whether they are up or not',
     long_description=open('README.rst').read(),
