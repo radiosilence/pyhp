@@ -1,8 +1,33 @@
+====
 pyhp
-=====
+====
 
 a simple tool to hit websites at a given interval and display whether they are up or not.
 
+:Authors:
+    James Cleveland
+
+:Version: 0.2
+
+
+Installation
+============
+
+::
+
+    pip install pyhp
+
+
+Also available in the AUR_ (for Arch Linux users)
+
+.. _AUR: http://aur.archlinux.org/packages.php?ID=60537
+
+Usage
+-----
+
+::
+
+    % pyhp
 
     Usage:
         pyhp <url> [-H] [--interval=<seconds>]
