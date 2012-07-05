@@ -30,10 +30,11 @@ Usage
     % pyhp
 
     Usage:
-        pyhp <url> [-H] [--interval=<seconds>]
+        pyhp <url> [-Ht] [--interval=<seconds>]
         pyhp -h | --help
 
     Options:
         -h --help                Show this screen.
         -H --headers             Show the headers returned by each request.
         -i --interval=<seconds>  Time between requests, in seconds. [default: 1]
+        -t --terse               Terse output, consisting only of . and X
