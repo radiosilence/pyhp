@@ -20,7 +20,7 @@ Installation
 
 Also available in the AUR_ (for Arch Linux users)
 
-.. _AUR: http://aur.archlinux.org/packages.php?ID=60537
+.. _AUR: https://aur.archlinux.org/packages.php?ID=60537
 
 Usage
 -----
