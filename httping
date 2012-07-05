@@ -12,16 +12,18 @@ Options:
     -i --interval=<seconds>  Time between requests, in seconds. [default: 1]
 """
 
-from docopt import docopt
 import requests
+import signal
+import sys
 from datetime import datetime
+from docopt import docopt
 from time import sleep
 
-def main(url, interval=None, show_headers=False):
+def loop(url, interval=None, show_headers=False):
     if not interval:
         interval = 1
 
-    while 1:
+    while True:
         now = datetime.now()
         r = requests.get(url)
         error = ''
@@ -42,11 +44,19 @@ def main(url, interval=None, show_headers=False):
                 )
         sleep(interval)
 
+
+def signal_handler(signal, frame):
+    sys.exit(0)
+
+
 if __name__ == '__main__':
     args = docopt(__doc__, version='HTTPing 0.1')
     try:
         interval = float(args['--interval'])
     except ValueError:
         interval = 1
-    main(args['<url>'], interval=interval,
+    signal.signal(signal.SIGINT, signal_handler)
+    loop(args['<url>'], interval=interval,
          show_headers=args['--headers'])
+
+    signal.pause()
