@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-"""HTTPing
-
+"""HTTPing - a simple tool to hit websites at a given interval and display
+whether they are up or not.
 
 Usage:
     httping <url> [-H] [--interval=<seconds>]
