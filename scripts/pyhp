@@ -24,12 +24,16 @@ def signal_handler(signal, frame):
 
 if __name__ == '__main__':
     args = docopt(__doc__, version='pyhp 0.1')
+    signal.signal(signal.SIGINT, signal_handler)
+
     try:
         interval = float(args['--interval'])
     except ValueError:
         interval = 1
-    signal.signal(signal.SIGINT, signal_handler)
-    pyhp(args['<url>'], interval=interval,
-         show_headers=args['--headers'])
+
+    for line in pyhp(args['<url>'], interval=interval,
+        show_headers=args['--headers']):
+        print line
+        sys.stdout.flush()
 
     signal.pause()
